@@ -20,6 +20,7 @@
 		8421D0AE2C27BF6B00D41FC1 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421D0AD2C27BF6B00D41FC1 /* Style.swift */; };
 		849E74D52C27DAC500310E80 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849E74D42C27DAC500310E80 /* Components.swift */; };
 		84A7DAC52C27C713002CACD3 /* NavigationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7DAC42C27C713002CACD3 /* NavigationPage.swift */; };
+		84A7DAD32C27E5B4002CACD3 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7DAD22C27E5B4002CACD3 /* Review.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		8421D0AD2C27BF6B00D41FC1 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		849E74D42C27DAC500310E80 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		84A7DAC42C27C713002CACD3 /* NavigationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPage.swift; sourceTree = "<group>"; };
+		84A7DAD22C27E5B4002CACD3 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				8421D0842C27B69E00D41FC1 /* Preview Assets.xcassets */,
+				84A7DAD22C27E5B4002CACD3 /* Review.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			files = (
 				8421D0AA2C27BA8F00D41FC1 /* ListView.swift in Sources */,
 				849E74D52C27DAC500310E80 /* Components.swift in Sources */,
+				84A7DAD32C27E5B4002CACD3 /* Review.swift in Sources */,
 				8421D0802C27B69D00D41FC1 /* ContentView.swift in Sources */,
 				84A7DAC52C27C713002CACD3 /* NavigationPage.swift in Sources */,
 				8421D0AE2C27BF6B00D41FC1 /* Style.swift in Sources */,
