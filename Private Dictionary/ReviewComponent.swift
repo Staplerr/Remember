@@ -31,8 +31,15 @@ struct ReviewComponent: View {
                                 .font(.title)
                                 .bold()
                         }
+                        if(!meaningShow){
+                            Text("กดเพื่อแสดง")
+                                .font(.title)
+                                .bold()
+                        }
                     }
                     .frame(maxWidth: .infinity,maxHeight: .infinity)
+                    .background(.white)
+                    .foregroundStyle(.black)
                     
                     
                 }).buttonStyle(ReviewButton())
