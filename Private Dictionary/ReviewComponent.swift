@@ -41,7 +41,8 @@ struct ReviewComponent: View {
                     .background(.white)
                     .foregroundStyle(.black)
                     
-                })
+                    
+                }).buttonStyle(ReviewButton())
             Spacer()
         }
     }
