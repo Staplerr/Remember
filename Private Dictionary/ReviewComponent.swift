@@ -28,12 +28,12 @@ struct ReviewComponent: View {
                             .bold()
                         if(meaningShow){
                             Text(value)
-                                .font(.title)
+                                .font(.caption)
                                 .bold()
                         }
                         if(!meaningShow){
-                            Text("กดเพื่อแสดง")
-                                .font(.title)
+                            Text("กดเพื่อแสดงคำแปล")
+                                .font(.caption)
                                 .bold()
                         }
                     }

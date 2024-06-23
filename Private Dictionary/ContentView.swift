@@ -60,7 +60,7 @@ struct ContentView: View {
                     Button{
                         Page = 1
                     } label: {
-                        Text("Lookup").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                        Text("Add a Word").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                             .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                     }
                     .buttonStyle(PageButton())
