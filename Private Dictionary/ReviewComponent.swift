@@ -28,7 +28,7 @@ struct ReviewComponent: View {
                             .bold()
                         if(meaningShow){
                             Text(value)
-                                .font(.caption)
+                                .font(.subheadline)
                                 .bold()
                         }
                         if(!meaningShow){
