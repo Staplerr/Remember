@@ -33,7 +33,7 @@ struct PageButton: ButtonStyle {
         func makeBody(configuration: Configuration) -> some View {
             configuration.label
                 .padding()
-                .background(Color(red: configuration.isPressed ? 0 : 1, green: configuration.isPressed ? 0.5 : 1, blue: configuration.isPressed ? 0.5 : 1,opacity: configuration.isPressed ? 0.9: 0.5))
+                .background(Color(red: configuration.isPressed ? 0 : 1, green: configuration.isPressed ? 0.5 : 1, blue: configuration.isPressed ? 0.5 : 1,opacity: configuration.isPressed ? 0.9: 0.1))
                 .foregroundStyle(configuration.isPressed ? .white : .black)
                 .clipShape(RoundedRectangle(cornerSize: /*@START_MENU_TOKEN@*/CGSize(width: 20, height: 10)/*@END_MENU_TOKEN@*/))
                 .scaleEffect(configuration.isPressed ? 1.1 : 1)

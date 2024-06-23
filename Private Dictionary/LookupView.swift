@@ -20,7 +20,7 @@ struct LookupView: View {
                 }
                 Text(keywordDictionary[textInput.lowercased()] ?? "No Known Description")
                 .padding()
-            }.navigationTitle("Lookup")
+            }.navigationBarTitle("Lookup")
         }
     }
 }
