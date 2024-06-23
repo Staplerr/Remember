@@ -112,6 +112,7 @@
 				8421D07D2C27B69D00D41FC1 /* Private_DictionaryApp.swift */,
 				8421D07F2C27B69D00D41FC1 /* ContentView.swift */,
 				8421D0AB2C27BA9C00D41FC1 /* LookupView.swift */,
+				84A7DAD22C27E5B4002CACD3 /* Review.swift */,
 				8421D0812C27B69E00D41FC1 /* Assets.xcassets */,
 				8421D0832C27B69E00D41FC1 /* Preview Content */,
 				8421D0A72C27B94600D41FC1 /* Editor.swift */,
