@@ -13,10 +13,12 @@ struct LookupView: View {
     var body: some View {
         VStack{
             List{
-                HStack {
+                VStack{
+                    Text("Enter Keyword").font(.callout)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     TextField("Enter A Keyword....",text: $textInput)
-                    Text(keywordDictionary[textInput.lowercased()] ?? "-")
                 }
+                Text(keywordDictionary[textInput.lowercased()] ?? "No Known Description")
                 .padding()
             }.navigationTitle("Lookup")
         }
