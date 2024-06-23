@@ -9,13 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     @State var keywordDictionary : [String:String] = ["lol":"Laugh Out Loud",
-        "hello":"สวัสดี"]
-    
+                                                      "hello":"สวัสดี"]
+    @State var Page:Int = 0
     var body: some View {
         VStack{
             ListView(keywordDictionary: keywordDictionary)
             
-<<<<<<< HEAD
         }.toolbar(content: {
             ToolbarItemGroup{
                 Button("Lookup",action: {Page = 0})
@@ -23,9 +22,6 @@ struct ContentView: View {
             }
         })
     }
-=======
-        }    }
->>>>>>> 3590590b20f01aec8fd8d26dcefb6031e7d67160
 }
 
 #Preview {
