@@ -7,17 +7,24 @@
 
 import SwiftUI
 
+
+
 struct ListView: View {
     @State var keywordDictionary : [String:String]
+    
+    private func binding(for key: String) -> Binding<String> {
+        return .init(
+            get: { self.keywordDictionary[key, default: ""] },
+            set: { self.keywordDictionary[key] = $0 })
+    }
     var body: some View {
         NavigationStack{
             List{
-                ForEach(keywordDictionary.sorted(by: >),id: \.key){key, value in
+                ForEach(keywordDictionary.sorted(by: >),id: \.key){element in
                     NavigationLink{
-                        Text("test")
-                        //NavigationPage(Word:key,Meaning:value)
+                        NavigationPage(Word:.constant(element.key),Meaning:binding(for: element.key))
                     } label:{
-                        Text(value)
+                        Text(element.key)
                     }
                 }
             }

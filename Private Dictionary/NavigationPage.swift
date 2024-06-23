@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct Navigation: View {
+struct NavigationPage: View {
     
     @Binding var Word: String
     @Binding var Meaning: String
@@ -34,5 +34,5 @@ struct Navigation: View {
 
 #Preview {
     @State var contentPreview = ["Dog", "สุนัข"]
-    return Navigation(Word: $contentPreview[0], Meaning: $contentPreview[1])
+    return NavigationPage(Word: $contentPreview[0], Meaning: $contentPreview[1])
 }
