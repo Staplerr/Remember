@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct ListView: View {
+    @State var keywordDictionary : [String:String]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            List{
+                ForEach(keywordDictionary.sorted(by: >),id: \.key){key, value in
+                    NavigationLink{
+                        Text("test")
+                        //NavigationPage(Word:key,Meaning:value)
+                    } label:{
+                        Text(value)
+                    }
+                }
+            }
+            .navigationTitle("Info")
+        }
     }
 }
 
 #Preview {
-    ListView()
+    @State var keywordDictionary : [String:String] = ["lol":"laugh out loud"]
+    return ListView(keywordDictionary: keywordDictionary)
 }

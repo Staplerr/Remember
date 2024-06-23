@@ -15,7 +15,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack{
-            LookupView(keywordDictionary: keywordDictionary)
+            ListView(keywordDictionary: keywordDictionary)
             
         }.toolbar(content: {
             ToolbarItemGroup{

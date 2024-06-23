@@ -12,14 +12,13 @@ struct LookupView: View {
     @State var textInput:String = ""
     var body: some View {
         VStack{
-            Text("Lookup")
             List{
                 HStack {
                     TextField("Enter A Keyword....",text: $textInput)
                     Text(keywordDictionary[textInput.lowercased()] ?? "-")
                 }
                 .padding()
-            }
+            }.navigationTitle("Lookup")
         }
     }
 }
