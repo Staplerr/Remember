@@ -10,6 +10,8 @@ import SwiftUI
 
 
 struct ListView: View {
+    @State var dataCode : String = ""
+    @State var codeShow: Bool = false
     @Binding var keywordDictionary : [String:String]
     @State var Page:Int = 0
     
@@ -30,11 +32,29 @@ struct ListView: View {
                             Text(element.key)
                         }
                     }
-                }
+                }.sheet(isPresented: $codeShow,
+                content: {
+                    Text("Your code")
+                    Text(dataCode)
+                })
                 .navigationTitle("Info")
                 .toolbar(content: {
                     ToolbarItemGroup{
-                        Button("Add Word",action: {Page = 0})
+                        Button("Publish",action: {
+                            Task{
+                                do{
+                                    var code = try await Publish(dict: keywordDictionary)
+                                    print("end")
+                                    dataCode = code
+                                    
+                                    print(dataCode)
+                                    codeShow = true
+                                    
+                                }catch{
+                                    print("error")
+                                }
+                            }
+                        })
                     }
                 })
             }
