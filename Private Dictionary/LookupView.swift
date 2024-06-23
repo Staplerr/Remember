@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LookupView: View {
-    @State var keywordDictionary : [String:String]
+    @Binding var keywordDictionary : [String:String]
     @State var textInput:String = ""
     var body: some View {
         VStack{
@@ -27,5 +27,5 @@ struct LookupView: View {
 
 #Preview {
     @State var keywordDictionary : [String:String] = ["lol":"laugh out loud"]
-    return LookupView(keywordDictionary: keywordDictionary)
+    return LookupView(keywordDictionary: $keywordDictionary)
 }

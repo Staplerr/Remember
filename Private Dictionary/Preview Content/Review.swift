@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct Review: View {
-    @Binding var wordList: [String]
+    @Binding var keywordDictionary: [String:String]
+    private func binding(for key: String) -> Binding<String> {
+        return .init(
+            get: { self.keywordDictionary[key, default: ""] },
+            set: { self.keywordDictionary[key] = $0 })
+    }
     var body: some View {
         TabView {
-            ForEach(wordList,id:\.self){ word in
-                Text(word)
-                    .font(.title)
-                    .bold()
+            ForEach(keywordDictionary.sorted(by: >),id: \.key){element in
+                ReviewComponent(key: .constant(element.key), value: binding(for: element.key))
             }
         }
         .tabViewStyle(.page(indexDisplayMode: .never))
@@ -22,6 +25,6 @@ struct Review: View {
 }
 
 #Preview {
-    @State var previewContent = ["Fading", "Decay", "Allow"]
-    return Review(wordList: $previewContent)
+    @State var previewContent = ["Fading":"จางลง", "Decay":"", "Allow":""]
+    return Review(keywordDictionary: $previewContent)
 }

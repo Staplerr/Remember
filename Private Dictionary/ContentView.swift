@@ -15,10 +15,13 @@ struct ContentView: View {
         NavigationStack{
             VStack{
                 if(Page==0){
-                    ListView(keywordDictionary: keywordDictionary)
+                    ListView(keywordDictionary: $keywordDictionary)
                 }
                 if(Page==1){
-                    LookupView(keywordDictionary: keywordDictionary)
+                    LookupView(keywordDictionary: $keywordDictionary)
+                }
+                if(Page==2){
+                    Review(keywordDictionary: $keywordDictionary)
                 }
                 
             }.toolbar(content: {
@@ -40,7 +43,16 @@ struct ContentView: View {
                     }
                     .buttonStyle(PageButton())
                     .padding(/*@START_MENU_TOKEN@*/EdgeInsets()/*@END_MENU_TOKEN@*/)
+                    Button{
+                        Page = 2
+                    } label: {
+                        Text("Review").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                    }
+                    .buttonStyle(PageButton())
+                    .padding(/*@START_MENU_TOKEN@*/EdgeInsets()/*@END_MENU_TOKEN@*/)
                     Spacer()
+
                 }
             })
         }

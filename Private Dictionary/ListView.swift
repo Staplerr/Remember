@@ -10,7 +10,7 @@ import SwiftUI
 
 
 struct ListView: View {
-    @State var keywordDictionary : [String:String]
+    @Binding var keywordDictionary : [String:String]
     @State var Page:Int = 0
     
     private func binding(for key: String) -> Binding<String> {
@@ -44,5 +44,5 @@ struct ListView: View {
 
 #Preview {
     @State var keywordDictionary : [String:String] = ["lol":"laugh out loud"]
-    return ListView(keywordDictionary: keywordDictionary)
+    return ListView(keywordDictionary: $keywordDictionary)
 }
