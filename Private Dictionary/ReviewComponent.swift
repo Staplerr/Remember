@@ -34,7 +34,8 @@ struct ReviewComponent: View {
                     }
                     .frame(maxWidth: .infinity,maxHeight: .infinity)
                     
-                })
+                    
+                }).buttonStyle(ReviewButton())
             Spacer()
         }
     }

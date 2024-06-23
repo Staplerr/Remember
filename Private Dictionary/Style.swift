@@ -42,6 +42,26 @@ struct PageButton: ButtonStyle {
         }
 }
 
+struct ReviewButton: ButtonStyle {
+        func makeBody(configuration: Configuration) -> some View {
+            configuration.label
+                .padding()
+                .foregroundStyle(configuration.isPressed ? Color(red: 0.3, green: 0.63, blue: 0.42) : .black)                .scaleEffect(configuration.isPressed ? 1.1 : 1)
+                .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+        }
+}
+
+struct RemoveButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .foregroundStyle(configuration.isPressed ? Color(red: 0.9, green: 0.1, blue: 0.05) : Color(red: 1, green: 0.4, blue: 0.4))              .scaleEffect(configuration.isPressed ? 1.1 : 1)
+            .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+    }
+}
+
 #Preview {
     
     struct ContentPreview: View {
@@ -50,7 +70,7 @@ struct PageButton: ButtonStyle {
             Button("Press Me") {
                 print("Button pressed!")
             }
-            .buttonStyle(PageButton())
+            .buttonStyle(RemoveButton())
             
             if(isOn){
                 Text("Hello")

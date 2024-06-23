@@ -9,18 +9,28 @@ import SwiftUI
 
 struct LookupView: View {
     @Binding var keywordDictionary : [String:String]
-    @State var textInput:String = ""
+    @State var inputWord:String = ""
+    @State var inputMeaning:String = ""
     var body: some View {
         VStack{
             List{
                 VStack{
-                    Text("Enter Keyword").font(.callout)
+                    Text("Enter a word").font(.callout)
                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    TextField("Enter A Keyword....",text: $textInput)
+                    TextField("Enter a word...",text: $inputWord)
+                        .padding()
                 }
-                Text(keywordDictionary[textInput.lowercased()] ?? "No Known Description")
-                .padding()
+                TextField("Enter its meaning...",text: $inputMeaning)
+                    .padding()
             }.navigationBarTitle("Lookup")
+        }
+        if (inputWord != "" && inputMeaning != "") {
+            VStack{
+                Button("Submit", action: {
+                    keywordDictionary[inputWord] = inputMeaning
+                    print(keywordDictionary)
+                })
+            }
         }
     }
 }

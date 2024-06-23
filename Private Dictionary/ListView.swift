@@ -12,6 +12,7 @@ import SwiftUI
 struct ListView: View {
     @Binding var keywordDictionary : [String:String]
     @State var Page:Int = 0
+    @State var onDelete: Bool = false
     
     private func binding(for key: String) -> Binding<String> {
         return .init(
@@ -22,22 +23,32 @@ struct ListView: View {
         ZStack{
             
             NavigationStack{
-                List{
-                    ForEach(keywordDictionary.sorted(by: >),id: \.key){element in
-                        NavigationLink{
-                            NavigationPage(Word:.constant(element.key),Meaning:binding(for: element.key))
-                        } label:{
+                VStack{
+                    
+                    List{
+                        ForEach(keywordDictionary.sorted(by: >),id: \.key){element in
+                            NavigationLink{
+                                NavigationPage(Word:.constant(element.key),Meaning:binding(for: element.key))
+                                    .toolbar(content: {
+                                        ToolbarItem{
+                                            Button("Remove a word", action:{
+                                                onDelete = true
+                                            })
+                                            .padding()
+                                            .buttonStyle(RemoveButton())
+                                            .font(.caption)
+                                        }
+                                    })
+                            }
+                        label:{
                             Text(element.key)
                         }
+                            
+                        }
                     }
+                    .navigationTitle("Info")
                 }
-                .navigationTitle("Info")
-                .toolbar(content: {
-                    ToolbarItemGroup{
-                        Button("Add Word",action: {Page = 1})
-                        Button("Review Words", action: {Page = 2})
-                    }
-                })
+                
             }
         }
     }
