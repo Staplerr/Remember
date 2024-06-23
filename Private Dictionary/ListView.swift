@@ -28,14 +28,13 @@ struct ListView: View {
                 List{
                     ForEach(keywordDictionary.sorted(by: >),id: \.key){element in
                         NavigationLink{
-                            @Environment(\.dismiss) var dismiss
+                            @Environment(\.presentationMode) var presentationMode
                             NavigationPage(Word:.constant(element.key),Meaning:binding(for: element.key))
                                 .toolbar(content: {
                                     ToolbarItemGroup{
                                         Button("Delete",action: {
-                                            
                                             keywordDictionary[element.key]=nil
-                                            self.showView = false
+                                            self.presentationMode.wrappedValue.dismiss()
                                         })
                                         .buttonStyle(RemoveButton())
                                     }
