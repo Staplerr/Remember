@@ -9,12 +9,20 @@ import SwiftUI
 
 struct Review: View {
     @Binding var wordList: [String]
+    @State var show = false
     var body: some View {
         TabView {
             ForEach(wordList,id:\.self){ word in
-                Text(word)
-                    .font(.title)
-                    .bold()
+                VStack{
+                    Text(word)
+                        .font(.title)
+                        .bold()
+                    Button("Show meaning", action: {
+                        print("meaning")
+                    })
+                        .font(.caption)
+                        .buttonStyle(PageButton())
+                }
             }
         }
         .tabViewStyle(.page(indexDisplayMode: .never))

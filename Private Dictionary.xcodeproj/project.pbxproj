@@ -57,7 +57,7 @@
 		8421D0AD2C27BF6B00D41FC1 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		849E74D42C27DAC500310E80 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 		84A7DAC42C27C713002CACD3 /* NavigationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPage.swift; sourceTree = "<group>"; };
-		84A7DAD22C27E5B4002CACD3 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		84A7DAD22C27E5B4002CACD3 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Review.swift; path = "Preview Content/Review.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +111,7 @@
 				8421D07D2C27B69D00D41FC1 /* Private_DictionaryApp.swift */,
 				8421D07F2C27B69D00D41FC1 /* ContentView.swift */,
 				8421D0AB2C27BA9C00D41FC1 /* LookupView.swift */,
+				84A7DAD22C27E5B4002CACD3 /* Review.swift */,
 				8421D0812C27B69E00D41FC1 /* Assets.xcassets */,
 				8421D0832C27B69E00D41FC1 /* Preview Content */,
 				8421D0A72C27B94600D41FC1 /* Editor.swift */,
@@ -126,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				8421D0842C27B69E00D41FC1 /* Preview Assets.xcassets */,
-				84A7DAD22C27E5B4002CACD3 /* Review.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
