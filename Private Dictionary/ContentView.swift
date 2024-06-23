@@ -20,6 +20,7 @@ struct ContentView: View {
         }.toolbar(content: {
             ToolbarItemGroup{
                 Button("Lookup",action: {Page = 0})
+                Button("Lookup",action: {Page = 1})
             }
         })
     }

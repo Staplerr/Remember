@@ -10,7 +10,7 @@ import SwiftUI
 struct CheckToggleStyle: ToggleStyle {
     func makeBody(configuration: Configuration) -> some View {
         Button {
-            configuration.label
+            configuration.isOn.toggle()
                 
         } label: {
             Label {
@@ -20,7 +20,11 @@ struct CheckToggleStyle: ToggleStyle {
                 
             }
         }
-        .buttonStyle(PageButton())
+        .padding()
+        .background(Color(red: configuration.isOn ? 0 : 0.9, green: configuration.isOn ? 0.5 : 0.9, blue: configuration.isOn ? 0.5 : 0.9))
+        .foregroundStyle(configuration.isOn ? .white : .black)
+        .clipShape(Capsule())
+        .animation(.easeOut(duration: 0.2), value: configuration.isOn)
     }
 }
 struct PageButton: ButtonStyle {
@@ -38,20 +42,24 @@ struct PageButton: ButtonStyle {
 #Preview {
     
     struct ContentPreview: View {
-        @State private var isOn = false
+        @State private var isOn = true
         var body: some View {
             Button("Press Me") {
                 print("Button pressed!")
             }
             .buttonStyle(PageButton())
             
-
-                
-                    Toggle("Switch Me", isOn: $isOn)
+            if(isOn){
+                Text("Hello")
+            }
+            
+            Toggle("Switch Me", isOn: $isOn)
                         .toggleStyle(CheckToggleStyle())
                 
         }
     }
+    
+    
     
     return ContentPreview()
 }

@@ -17,7 +17,7 @@
 		8421D0A82C27B94600D41FC1 /* Editor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421D0A72C27B94600D41FC1 /* Editor.swift */; };
 		8421D0AA2C27BA8F00D41FC1 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421D0A92C27BA8F00D41FC1 /* ListView.swift */; };
 		8421D0AC2C27BA9C00D41FC1 /* LookupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421D0AB2C27BA9C00D41FC1 /* LookupView.swift */; };
-		8421D0AE2C27BF6B00D41FC1 /* PageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421D0AD2C27BF6B00D41FC1 /* PageButton.swift */; };
+		8421D0AE2C27BF6B00D41FC1 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8421D0AD2C27BF6B00D41FC1 /* Style.swift */; };
 		84A7DAC52C27C713002CACD3 /* NavigationPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7DAC42C27C713002CACD3 /* NavigationPage.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +52,7 @@
 		8421D0A72C27B94600D41FC1 /* Editor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Editor.swift; sourceTree = "<group>"; };
 		8421D0A92C27BA8F00D41FC1 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		8421D0AB2C27BA9C00D41FC1 /* LookupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookupView.swift; sourceTree = "<group>"; };
-		8421D0AD2C27BF6B00D41FC1 /* PageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageButton.swift; sourceTree = "<group>"; };
+		8421D0AD2C27BF6B00D41FC1 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		84A7DAC42C27C713002CACD3 /* NavigationPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +111,7 @@
 				8421D0832C27B69E00D41FC1 /* Preview Content */,
 				8421D0A72C27B94600D41FC1 /* Editor.swift */,
 				8421D0A92C27BA8F00D41FC1 /* ListView.swift */,
-				8421D0AD2C27BF6B00D41FC1 /* PageButton.swift */,
+				8421D0AD2C27BF6B00D41FC1 /* Style.swift */,
 				84A7DAC42C27C713002CACD3 /* NavigationPage.swift */,
 			);
 			path = "Private Dictionary";
@@ -275,7 +275,7 @@
 				8421D0AA2C27BA8F00D41FC1 /* ListView.swift in Sources */,
 				8421D0802C27B69D00D41FC1 /* ContentView.swift in Sources */,
 				84A7DAC52C27C713002CACD3 /* NavigationPage.swift in Sources */,
-				8421D0AE2C27BF6B00D41FC1 /* PageButton.swift in Sources */,
+				8421D0AE2C27BF6B00D41FC1 /* Style.swift in Sources */,
 				8421D0A82C27B94600D41FC1 /* Editor.swift in Sources */,
 				8421D07E2C27B69D00D41FC1 /* Private_DictionaryApp.swift in Sources */,
 				8421D0AC2C27BA9C00D41FC1 /* LookupView.swift in Sources */,
