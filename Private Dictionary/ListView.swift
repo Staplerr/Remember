@@ -19,23 +19,25 @@ struct ListView: View {
             set: { self.keywordDictionary[key] = $0 })
     }
     var body: some View {
-        NavigationStack{
-            List{
-                ForEach(keywordDictionary.sorted(by: >),id: \.key){element in
-                    NavigationLink{
-                        NavigationPage(Word:.constant(element.key),Meaning:binding(for: element.key))
-                    } label:{
-                        Text(element.key)
+        ZStack{
+            
+            NavigationStack{
+                List{
+                    ForEach(keywordDictionary.sorted(by: >),id: \.key){element in
+                        NavigationLink{
+                            NavigationPage(Word:.constant(element.key),Meaning:binding(for: element.key))
+                        } label:{
+                            Text(element.key)
+                        }
                     }
                 }
+                .navigationTitle("Info")
+                .toolbar(content: {
+                    ToolbarItemGroup{
+                        Button("Add Word",action: {Page = 0})
+                    }
+                })
             }
-            .navigationTitle("Info")
-            .toolbar(content: {
-                ToolbarItemGroup{
-                    Button("Add Word",action: {Page = 0})
-                }
-            })
-
         }
     }
 }

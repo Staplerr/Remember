@@ -15,7 +15,8 @@ struct ContentView: View {
         VStack{
             ListView(keywordDictionary: keywordDictionary)
             
-        }    }
+        }
+    }
 }
 
 #Preview {
