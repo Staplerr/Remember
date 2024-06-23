@@ -19,6 +19,9 @@ struct Review: View {
             ForEach(keywordDictionary.sorted(by: >),id: \.key){element in
                 ReviewComponent(key: .constant(element.key), value: binding(for: element.key))
             }
+            if(keywordDictionary.count==0){
+                Text("Nothing Here...")
+            }
         }
         .tabViewStyle(.page(indexDisplayMode: .never))
     }

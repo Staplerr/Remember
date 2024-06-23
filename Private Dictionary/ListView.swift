@@ -10,6 +10,7 @@ import SwiftUI
 
 
 struct ListView: View {
+    @State var inputCode : String = "TmkXj4Cx"
     @State var dataCode : String = ""
     @State var codeShow: Bool = false
     @Binding var keywordDictionary : [String:String]
@@ -25,6 +26,9 @@ struct ListView: View {
                         } label:{
                             Text(element.key)
                         }
+                    }
+                    if(keywordDictionary.count==0){
+                        Text("Nothing Here...")
                     }
                 }.sheet(isPresented: $codeShow,
                 content: {
@@ -54,13 +58,17 @@ struct ListView: View {
                             Task{
                                 do{
                                     
-                                    var code = try await Download(code:"sHwrNN9s")
+                                    var code = try await Download(code:inputCode)
+                                    keywordDictionary = code
+                                    print(code)
                                     
                                 }catch{
                                     print("error")
                                 }
                             }
                         })
+                        
+                        TextField("code",text: $inputCode)
                     }
                 })
             }
