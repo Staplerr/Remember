@@ -12,6 +12,7 @@ struct NavigationPage: View {
     
     @Binding var Word: String
     @Binding var Meaning: String
+    @Environment(\.dismiss) var dismiss
     var body: some View {
             List{
                 VStack{

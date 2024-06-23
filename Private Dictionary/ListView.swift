@@ -14,13 +14,6 @@ struct ListView: View {
     @State var codeShow: Bool = false
     @Binding var keywordDictionary : [String:String]
     @State var Page:Int = 0
-    @Environment(\.dismiss) var dismiss
-    @Environment(\.presentationMode) var presentationMode
-    private func binding(for key: String) -> Binding<String> {
-        return .init(
-            get: { self.keywordDictionary[key, default: ""] },
-            set: { self.keywordDictionary[key] = $0 })
-    }
     var body: some View {
         ZStack{
             
@@ -28,18 +21,7 @@ struct ListView: View {
                 List{
                     ForEach(keywordDictionary.sorted(by: >),id: \.key){element in
                         NavigationLink{
-                            @Environment(\.dismiss) var dismiss
-                            NavigationPage(Word:.constant(element.key),Meaning:binding(for: element.key))
-                                .toolbar(content: {
-                                    ToolbarItemGroup{
-                                        Button("Delete",action: {
-                                            
-                                            keywordDictionary[element.key]=nil
-                                            self.showView = false
-                                        })
-                                        .buttonStyle(RemoveButton())
-                                    }
-                                })
+                            NavigationComponent(keywordDictionary: $keywordDictionary, key: .constant(element.key))
                         } label:{
                             Text(element.key)
                         }

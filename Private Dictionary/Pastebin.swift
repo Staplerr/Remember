@@ -89,7 +89,7 @@ func Publish(dict:[String:String]) async throws -> String {
         return "Error"
     }
 }
-func Publish(dict:[String:String]) async throws -> String {
+func Download(dict:[String:String]) async throws -> String {
 
     var pasteString = ""
     

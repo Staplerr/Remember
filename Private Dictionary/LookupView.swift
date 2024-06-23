@@ -26,12 +26,15 @@ struct LookupView: View {
                 Section{
                     if (inputWord != "" && inputMeaning != "") {
                         VStack{
-                            Button("Submit", action: {
+                            Button{
                                 keywordDictionary[inputWord] = inputMeaning
                                 print(keywordDictionary)
                                 inputWord = ""
                                 inputMeaning = ""
-                            })
+                            } label: {
+                                Text("Submit").frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+                            }
+                            .buttonStyle(PageButton())
                         }
                     }
                 }
