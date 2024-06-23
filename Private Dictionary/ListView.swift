@@ -11,6 +11,7 @@ import SwiftUI
 
 struct ListView: View {
     @State var keywordDictionary : [String:String]
+    @State var Page:Int = 0
     
     private func binding(for key: String) -> Binding<String> {
         return .init(
@@ -29,6 +30,12 @@ struct ListView: View {
                 }
             }
             .navigationTitle("Info")
+            .toolbar(content: {
+                ToolbarItemGroup{
+                    Button("Add Word",action: {Page = 0})
+                }
+            })
+
         }
     }
 }
