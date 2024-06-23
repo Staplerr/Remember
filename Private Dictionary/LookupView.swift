@@ -22,16 +22,23 @@ struct LookupView: View {
                 }
                 TextField("Enter its meaning...",text: $inputMeaning)
                     .padding()
-            }.navigationBarTitle("Lookup")
+                
+                Section{
+                    if (inputWord != "" && inputMeaning != "") {
+                        VStack{
+                            Button("Submit", action: {
+                                keywordDictionary[inputWord] = inputMeaning
+                                print(keywordDictionary)
+                                inputWord = ""
+                                inputMeaning = ""
+                            })
+                        }
+                    }
+                }
+            }.navigationBarTitle("Add Word")
         }
-        if (inputWord != "" && inputMeaning != "") {
-            VStack{
-                Button("Submit", action: {
-                    keywordDictionary[inputWord] = inputMeaning
-                    print(keywordDictionary)
-                })
-            }
-        }
+        
+        
     }
 }
 
