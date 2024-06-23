@@ -18,9 +18,10 @@ struct Review: View {
                         .font(.title)
                         .bold()
                     Button("Show meaning", action: {
-                        print("meaning")
-                    })
-                        .font(.caption)
+                        VStack{
+                            Text("Meaning")
+                        }
+                    }).font(.caption)
                         .buttonStyle(PageButton())
                 }
             }

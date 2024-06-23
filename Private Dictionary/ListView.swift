@@ -34,7 +34,8 @@ struct ListView: View {
                 .navigationTitle("Info")
                 .toolbar(content: {
                     ToolbarItemGroup{
-                        Button("Add Word",action: {Page = 0})
+                        Button("Add Word",action: {Page = 1})
+                        Button("Review Words", action: {Page = 2})
                     }
                 })
             }
