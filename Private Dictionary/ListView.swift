@@ -50,6 +50,17 @@ struct ListView: View {
                                 }
                             }
                         })
+                        Button("Download",action: {
+                            Task{
+                                do{
+                                    
+                                    var code = try await Download(code:"sHwrNN9s")
+                                    
+                                }catch{
+                                    print("error")
+                                }
+                            }
+                        })
                     }
                 })
             }
