@@ -10,9 +10,10 @@ import SwiftUI
 
 
 struct ListView: View {
+    @State var dataCode : String = ""
+    @State var codeShow: Bool = false
     @Binding var keywordDictionary : [String:String]
     @State var Page:Int = 0
-    @State var onDelete: Bool = false
     
     private func binding(for key: String) -> Binding<String> {
         return .init(
@@ -23,32 +24,39 @@ struct ListView: View {
         ZStack{
             
             NavigationStack{
-                VStack{
-                    
-                    List{
-                        ForEach(keywordDictionary.sorted(by: >),id: \.key){element in
-                            NavigationLink{
-                                NavigationPage(Word:.constant(element.key),Meaning:binding(for: element.key))
-                                    .toolbar(content: {
-                                        ToolbarItem{
-                                            Button("Remove a word", action:{
-                                                onDelete = true
-                                            })
-                                            .padding()
-                                            .buttonStyle(RemoveButton())
-                                            .font(.caption)
-                                        }
-                                    })
-                            }
-                        label:{
+                List{
+                    ForEach(keywordDictionary.sorted(by: >),id: \.key){element in
+                        NavigationLink{
+                            NavigationPage(Word:.constant(element.key),Meaning:binding(for: element.key))
+                        } label:{
                             Text(element.key)
                         }
-                            
-                        }
                     }
-                    .navigationTitle("Info")
-                }
-                
+                }.sheet(isPresented: $codeShow,
+                content: {
+                    Text("Your code")
+                    Text(dataCode)
+                })
+                .navigationTitle("Info")
+                .toolbar(content: {
+                    ToolbarItemGroup{
+                        Button("Publish",action: {
+                            Task{
+                                do{
+                                    var code = try await Publish(dict: keywordDictionary)
+                                    print("end")
+                                    dataCode = code
+                                    
+                                    print(dataCode)
+                                    codeShow = true
+                                    
+                                }catch{
+                                    print("error")
+                                }
+                            }
+                        })
+                    }
+                })
             }
         }
     }
